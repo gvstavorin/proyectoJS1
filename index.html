@@ -1,23 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JDM</title>
-     <link rel="stylesheet" href="./src/css/style.css">
-</head>
-<body>
-    
-
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
     <h1>Bienvenido</h1>
 
-    <br>
+    <header>
+      <h2>Menu interactivo para calculo de IMC</h2>
+    </header>
 
-    <h2>Menu interactivo para calculo de IMC
-        
-    </h2>
+    <main>
+      <section class="formulario">
+        <form id="formulario">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required />
+          </div>
+          <div>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required />
+          </div>
+          <div>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required />
+          </div>
+          <div>
+            <label for="sexo">Sexo :</label>
+            <select id="sexo" required>
+              <option value="hombre" selected>Hombre</option>
+              <option value="mujer">Mujer</option>
+            </select>
+          </div>
+          <div>
+            <label for="altura">Altura (ingresar en Cm):</label>
+            <input type="number" id="altura" min="1" max="250" required />
+          </div>
+          <div>
+            <label for="peso">Peso (ingresar en Kg):</label>
+            <input type="number" id="peso" min="1" max="300" required />
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
 
+      <section  id="datosMostrar" class="mostrar-datos" style="display: none;">
+        <h2>Datos Ingresados:</h2>
+        <p><strong>Nombre:</strong> <span id="datoNombre"></span></p>
+        <p><strong>Apellido:</strong> <span id="datoApellido"></span></p>
+        <p><strong>Edad:</strong> <span id="datoEdad"></span></p>
+        <p><strong>Sexo:</strong> <span id="datoSexo"></span></p>
+        <p><strong>Altura:</strong> <span id="datoAltura"></span></p>
+        <p><strong>Peso:</strong> <span id="datoPeso"></span></p>
+        <button id="editarDatos">Ingresar nuevamente los datos</button>
+
+        <h2>Tu menu : </h2>
+
+        <button id="calcularImc">Calcular IMC</button>
+        <button id="crearRutina">Ejercicios en casa</button>
+        <button id="mostrarResultados">Mostrar imc y rutina</button>
+      </section>
+
+
+      <section id="datosImc" style="display: none;">
+
+           
+                <p><strong>Su imc es de :</strong> <span id="datoImc"></span></p>
+                <p><strong>Se encuentra en un rango de :</strong> <span id="rangoImc"></span></p>
+                  
+
+      </section>
+
+      <section id="Planificador" style="display: none;">
+        <div id="ejercicios">
+            <h2>Ejercicios</h2>
+            <ul id="listaEjercicios">
+            </ul>
+        </div>
+        <div id="miRutina">
+            <h2>Mi rutina</h2>
+            <ul id="listaRutina">
+            </ul>
+            <button id="guardarRutina">Guardar Rutina</button>
+        </div>
+      </section>
+
+
+      
+      <section id="mostrarImcRutina" style="display: none;">
+
+        <strong> Hola </strong> <span id="u-nombre"></span>   
+        <p><strong>Su imc es de :</strong> <span id="u-imc"></span></p>
+        <p><strong>Se encuentra en un rango de :</strong> <span id="u-rangoImc"></span></p>
+
+        <p>Su rutina elegida corresponde a : </p>
+
+        <ul id="rutinaElegida">
+        </ul>
+
+          
+
+</section>
+      
+      
+    </main>
 
     <script src="./src/js/main.js"></script>
-</body>
+  </body>
 </html>
